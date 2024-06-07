@@ -13,7 +13,7 @@ type PostProps = {
 export const Post: React.FC<PostProps> = ({ post }) => {
   return (
     <Link
-      href={`/article/${post.id}`}
+      href={`/blog/${post.id}`}
       key={post.id}
     >
       <Card className="flex flex-col gap-2 rounded-xl overflow-hidden h-full hover:bg-gray-100">
