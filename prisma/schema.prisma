@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -28,6 +22,22 @@ model User {
   campaign Campaign[]
 
   subscription Billings?
+}
+
+model Post {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  title     String
+  content   String
+  publicId  Images?
+}
+
+model Images {
+  id       String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  publicId String
+  Post     Post?   @relation(fields: [postId], references: [id])
+  postId   String? @unique @db.Uuid
 }
 
 model Domain {

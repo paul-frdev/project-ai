@@ -1,5 +1,5 @@
 'use server';
-import { client } from '@/lib/prisma';
+import client from '@/lib/prisma';
 import { clerkClient, currentUser } from '@clerk/nextjs';
 
 export const onIntegrateDomain = async (domain: string, icon: string) => {
