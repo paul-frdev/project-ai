@@ -9,7 +9,7 @@ const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "A-i manager App",
-  description: "An app to manage to your sites",
+  description: "An app helps manage to with your sites",
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={jakarta.className}>
           <ThemeProvider
             attribute="class"

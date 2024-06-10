@@ -32,6 +32,7 @@ export const onCompleteUserRegistration = async (fullname: string, clerkId: stri
 
 export const onLoginUser = async () => {
   const user = await currentUser();
+
   if (!user) redirectToSignIn();
   else {
     try {
@@ -45,9 +46,10 @@ export const onLoginUser = async () => {
           type: true,
         },
       });
+
       if (authenticated) {
         const domains = await onGetAllAccountDomains();
-        return { status: 200, user: authenticated, domain: domains?.domains };
+        return { status: 200, user: authenticated, domains: domains?.domains };
       }
     } catch (error) {
       return { status: 400 };

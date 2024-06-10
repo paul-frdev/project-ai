@@ -1,4 +1,5 @@
 'use server';
+
 import client from '@/lib/prisma';
 import { clerkClient, currentUser } from '@clerk/nextjs';
 
@@ -36,9 +37,9 @@ export const onIntegrateDomain = async (domain: string, icon: string) => {
 
     if (!domainExists) {
       if (
-        (subscription?.subscription?.plan == 'STANDARD' && subscription._count.domains < 1) ||
-        (subscription?.subscription?.plan == 'PRO' && subscription._count.domains < 5) ||
-        (subscription?.subscription?.plan == 'ULTIMATE' && subscription._count.domains < 10)
+        (subscription?.subscription?.plan === 'STANDARD' && subscription._count.domains < 1) ||
+        (subscription?.subscription?.plan === 'PRO' && subscription._count.domains < 5) ||
+        (subscription?.subscription?.plan === 'ULTIMATE' && subscription._count.domains < 10)
       ) {
         const newDomain = await client.user.update({
           where: {
