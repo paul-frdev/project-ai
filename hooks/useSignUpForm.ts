@@ -71,16 +71,16 @@ export const useSignUpForm = () => {
             values.type
           )
 
-          if (registered?.status == 200 && registered.user) {
+          if (registered?.status === 200 && registered.user) {
             await setActive({
               session: completeSignUp.createdSessionId,
             })
 
             setLoading(false)
-            router.push('/dashboard')
+            router.push('/settings')
           }
 
-          if (registered?.status == 400) {
+          if (registered?.status === 400) {
             toast({
               title: 'Error',
               description: 'Something went wrong!',

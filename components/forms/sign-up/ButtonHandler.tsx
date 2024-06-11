@@ -1,7 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { useAuthContextHook } from '@/context/useAuthContext'
-import { useSignUpForm } from '@/hooks/useSignUp'
+import { useSignUpForm } from '@/hooks/useSignUpForm'
 import Link from 'next/link'
 import React from 'react'
 import { useFormContext } from 'react-hook-form'

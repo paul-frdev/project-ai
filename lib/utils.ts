@@ -6,27 +6,27 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getMonthName = (month: number) => {
-  return month == 1
+  return month === 1
     ? 'Jan'
-    : month == 2
+    : month === 2
     ? 'Feb'
-    : month == 3
+    : month === 3
     ? 'Mar'
-    : month == 4
+    : month === 4
     ? 'Apr'
-    : month == 5
+    : month === 5
     ? 'May'
-    : month == 6
+    : month === 6
     ? 'Jun'
-    : month == 7
+    : month === 7
     ? 'Jul'
-    : month == 8
+    : month === 8
     ? 'Aug'
-    : month == 9
+    : month === 9
     ? 'Sep'
-    : month == 10
+    : month === 10
     ? 'Oct'
-    : month == 11
+    : month === 11
     ? 'Nov'
-    : month == 12 && 'Dec';
+    : month === 12 && 'Dec';
 };
