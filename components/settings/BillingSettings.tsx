@@ -11,8 +11,6 @@ export const BillingSettings = async () => {
   const plan = await onGetSubscriptionPlan();
   const planFeatures = pricingCards.find((card) => card.title.toUpperCase() === plan?.toUpperCase())?.features
 
-  console.log('plan', plan);
-
   if (!planFeatures) return
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">

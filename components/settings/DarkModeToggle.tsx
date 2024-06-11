@@ -14,8 +14,6 @@ export const DarkModeToggle = () => {
 
   const { setTheme, theme } = useThemeMode();
   const [isMounted, setIsMounted] = useState(false)
-
-  console.log('theme', theme);
   
   useEffect(() => {
     setIsMounted(true)
