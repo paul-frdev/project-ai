@@ -2,7 +2,7 @@ import React from 'react'
 import { User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import { cn, getMonthName } from '@/lib/utils'
 
 type Props = {

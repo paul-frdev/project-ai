@@ -6,7 +6,7 @@ import { Button } from '../ui/button'
 import { PaperclipIcon } from 'lucide-react'
 import { useChatWindow } from '@/hooks/useChatWindow'
 import { Loader } from '../Loader'
-import { Bubble } from '../Bubble'
+import { Bubble } from '../chatbot/Bubble'
 
 type Props = {}
 
