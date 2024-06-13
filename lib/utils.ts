@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const pusherServer = {};
+export const pusherServer = {} as any;
 // export const pusherServer = new PusherServer({
 //   appId: process.env.NEXT_PUBLIC_PUSHER_APP_ID as string,
 //   key: process.env.NEXT_PUBLIC_PUSHER_APP_KEY as string,
@@ -16,13 +16,25 @@ export const pusherServer = {};
 //   useTLS: true,
 // });
 
-export const pusherClient = {};
+export const pusherClient = {} as any;
 // export const pusherClient = new PusherClient(
 //   process.env.NEXT_PUBLIC_PUSHER_APP_KEY as string,
 //   {
 //     cluster: process.env.NEXT_PUBLIC_PUSHER_APP_CLUSTOR as string,
 //   }
 // )
+
+export const postToParent = (message: string) => {
+  window.parent.postMessage(message, '*');
+};
+
+export const extractURLfromString = (url: string) => {
+  return url.match(/https?:\/\/[^\s"<>]+/);
+};
+
+export const extractEmailsFromString = (text: string) => {
+  return text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
+};
 
 export const getMonthName = (month: number) => {
   return month === 1
